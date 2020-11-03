@@ -1,0 +1,115 @@
+{game_entity
+	(include "/properties/stuff.ext")
+	{collider "stuff.construction"}
+
+	;{props "-steel" "wood" "fence" "construction" "inventory_box" "spread_items"}
+	{props "steel" "construction" "inventory_box" "spread_items" "no_destroyed_stamp" "cornered" "small"}
+
+	{extender "inventory"
+		{box
+			;{weight 600}
+			{weight 1000000}
+			;{size 8 6}
+			;1920×1080，个人测试用分辨率
+			;{size 41 25}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
+			;{size 38 20}		;正常显示格数，推荐作为日常使用
+			;1280×720，游戏所支持的最小分辨率
+			;{size 23 16}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
+			{size 20 12}		;正常显示格数加一圈，推荐作为日常使用
+			;{size 19 11}		;正常显示格数，日常使用略小
+
+			{clear}
+
+			;Explosive
+			{item "dynamite" 100}
+			{item "dynamite_clockwork" 100}		;不知道激发方式
+			{item "dynamite_ladung" 100}
+			{item "mine antipersonnel" 100}
+			{item "mine antitank" 100}
+			{item "mine_antitank_jap" 100}		;不知道激发方式
+
+			;Flame Thrower
+			;Injector|Thrower
+			{item "flame_thrower" 100}
+			{item "flame_thrower_g" 100}
+			;无法发射，贴图不完整
+			{item "flame_thrower_ssd" 100}		;游戏内标注为Tank Flamethrower
+			{item "flame_thrower_tank" 100}		;游戏内标注为Tank Flamethrower
+			;
+			;Tank|Ballon
+			{item "balloon" 100 filled}
+			{item "balloon_g" 100 filled}
+			;激发方式未知
+			{item "tank_balloon" 100 filled}
+
+			;Grenade
+			;？Anti-Personal
+			{item "grenade f1" 100}
+			{item "grenade m24" 100}
+			{item "grenade m39" 100}
+			{item "grenade m61" 100}
+			{item "grenade mk1" 100}
+			{item "grenade type97" 100}
+			{item "grenade type99" 100}
+			;Explosive
+			{item "grenade satchel" 100}		;游戏中使用方式、分类归为了Explosive
+			;
+			;Anti-Tank
+			;Normal
+			{item "grenade m24x5" 100}
+			{item "grenade n73at" 100}
+			{item "grenade pwm1" 100}
+			{item "grenade rg42x3" 100}
+			{item "grenade rpg40" 100}
+			{item "grenade rpg43" 100}
+			{item "grenade type3at" 100}
+			{item "grenade type3at_a" 100}
+			{item "grenade type99at" 100}
+			;Flame
+			{item "grenade molotov_coctail" 100}
+			;
+			;Smoke
+			{item "grenade smoke" 100}
+			{item "grenade smoke_paradrop_ammo" 100}
+			{item "grenade smoke_paradrop_ammo_heavy" 100}
+			;战役中：无图标，使用、拖到外面报错；遭遇战中：？
+			;{item "grenade skirmish_smoke" 100}
+
+			;Rocket Propelled Grenade|Bazooka
+			;Weapon
+			{item "weapon bazooka" 100 filled}
+			{item "weapon doublebazooka" 100 filled}
+			{item "weapon m18recoilless" 100 filled}
+			{item "weapon panzerfaust" 100 filled}
+			{item "weapon panzerfaust60" 100 filled}
+			{item "weapon panzershreck" 100 filled}
+			{item "weapon piatrocket" 100 filled}
+			{item "weapon type_4at" 100 filled}
+			{item "weapon uber_bazooka" 100 filled}
+			;
+			;Ammo
+			{item "ammo bazooka" 100}
+			{item "ammo m18recoilless" 100}
+			{item "ammo panzerfaust" 100}
+			{item "ammo panzerfaust60" 100}
+			{item "ammo panzershreck" 100}
+			{item "ammo piatrocket" 100}
+			{item "ammo type_4" 100}
+			{item "ammo uber_bazooka" 100}
+
+			;附属
+			;Ammunition|Content
+			;不知道激发方式，拖到外面报错
+			;{item "fuel" 100}
+			;{item "liquid" 100}		;游戏内标注为fuel
+		}
+	}
+	{Volume "body"
+		{thickness 1}
+		{able {touch}}
+	}
+	{extender "stuff"
+		{item "bazooka+explosive+flame+grenade_box"}
+	}
+	{Extension "box2.mdl"}
+}

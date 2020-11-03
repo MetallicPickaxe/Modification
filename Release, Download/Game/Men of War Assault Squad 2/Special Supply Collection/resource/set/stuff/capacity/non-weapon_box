@@ -1,0 +1,21 @@
+;原型：small_box
+{item
+	{tag "itemin2hands keepEntity"}
+
+	;{entity "box2"}
+	{entity "non-weapon_box"}
+
+	;{desc "desc/container/small_box"}
+	{desc "All Non-weapon Items Box"}
+
+	{inventory
+		{size 4 2}
+
+		;{weight 100}
+		{weight 10000}
+		{fsm "hand-only"}
+	}
+
+	;{mass 2}
+	{mass 10000}
+}

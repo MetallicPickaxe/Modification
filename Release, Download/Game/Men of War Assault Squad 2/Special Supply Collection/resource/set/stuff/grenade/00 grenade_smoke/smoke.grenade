@@ -1,0 +1,20 @@
+;
+;
+;
+;
+;最后修改日期：2019.02.16
+;综述
+;当前原始数据版本：3.262.0
+;
+{from "pattern grenade_smoke"
+	{tag "-missile"}
+	{inventory {size 2 1}}
+
+	;{entity "grenade_smoke"}
+	{entity "grenade_smoke_paradrop_ammo"}		;直接将烟雾弹的entity指向变为了普通空投补给箱，同效果的最小改动
+
+	{mass 0.3}
+	{throw
+		{range 25}
+	}
+}

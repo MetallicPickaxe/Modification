@@ -1,0 +1,80 @@
+{game_entity
+	(include "/properties/stuff.ext")
+	{collider "stuff.construction"}
+
+	;{props "-steel" "wood" "fence" "construction" "inventory_box" "spread_items"}
+	{props "steel" "construction" "inventory_box" "spread_items" "no_destroyed_stamp" "cornered" "small"}
+
+	{extender "inventory"
+		{box
+			;{weight 600}
+			{weight 1000000}
+			;{size 8 6}
+			;1920×1080，个人测试用分辨率
+			;{size 41 25}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
+			;{size 38 20}		;正常显示格数，推荐作为日常使用
+			;1280×720，游戏所支持的最小分辨率
+			;{size 23 16}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
+			{size 20 12}		;正常显示格数加一圈，推荐作为日常使用
+			;{size 19 11}		;正常显示格数，日常使用略小
+
+			{clear}
+
+			;Rifle
+			{item "g41b" 100 filled}
+			{item "g43" 100 filled}
+			{item "johnson" 100 filled}
+			{item "em3" 100 filled}
+			{item "m1903" 100 filled}
+			{item "mauzer" 100 filled}
+			{item "mosin" 100 filled}		;MOSIN–NAGANT RIFLE
+			{item "sks" 100 filled}
+			{item "svt40" 100 filled}
+			{item "type2rifle" 100 filled}
+			{item "type99rifle" 100 filled}
+			;
+			;Assault|Automatic Rifle
+			;{item "m2_carbine" 100 filled}		;？
+			;
+			;Carbine Rifle
+			{item "garand" 100 filled}
+			{item "m1_carbine" 100 filled}
+			{item "m2_carbine" 100 filled}
+			;
+			;Scope
+			{item "g43_scope" 100 filled}
+			;
+			;Silencer
+			{item "de_lisle" 100 filled}
+
+			;Rifle Grenade
+			{item "em3_mark1" 100 filled}
+			{item "type99rifle_at" 100 filled}
+
+			;Shot Gun
+			{item "m12_shotgun" 100 filled}
+
+			;Sniper Rifle
+			{item "em2" 100 filled}
+			{item "g41" 100 filled}
+			{item "m1903a4" 100 filled}
+			{item "mosin_s" 100 filled}		;MOSIN–NAGANT RIFLE
+			{item "type99rifle_s" 100 filled}
+
+			;附属
+			;Ammunition|Content
+			{item "ammo rifle" 100}
+			{item "ammo rifle_grenade_at" 100}
+			{item "ammo rifle_grenade" 100}
+			{item "ammo shotgun" 100}
+		}
+	}
+	{Volume "body"
+		{thickness 1}
+		{able {touch}}
+	}
+	{extender "stuff"
+		{item "rifle+sniper_box"}
+	}
+	{Extension "box2.mdl"}
+}
