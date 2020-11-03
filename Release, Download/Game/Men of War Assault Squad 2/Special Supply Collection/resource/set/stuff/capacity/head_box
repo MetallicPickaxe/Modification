@@ -12,10 +12,10 @@
 		{size 4 2}
 
 		;{weight 100}
-		{weight 10000}
+		{weight 10000}		;游戏中强制识别为1 0000kg，故保持一致
 		{fsm "hand-only"}
 	}
 
 	;{mass 2}
-	{mass 10000}
+	{mass 10000}		;游戏中强制识别为1 0000kg，故保持一致
 }
