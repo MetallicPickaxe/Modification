@@ -1,0 +1,6 @@
+{mod
+	{name "Un-disappeared Relic"}
+	{desc "Producer: Pickaxe"}
+	{minGameVersion "3.260"}
+	{maxGameVersion "3.265"}
+}

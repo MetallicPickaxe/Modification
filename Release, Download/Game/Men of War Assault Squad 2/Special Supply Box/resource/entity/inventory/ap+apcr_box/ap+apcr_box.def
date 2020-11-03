@@ -1,0 +1,79 @@
+{game_entity
+	(include "/properties/stuff.ext")
+	{collider "stuff.construction"}
+
+	;{props "-steel" "wood" "fence" "construction" "inventory_box" "spread_items"}
+	{props "steel" "construction" "inventory_box" "spread_items" "no_destroyed_stamp" "cornered" "small"}
+
+	{extender "inventory"
+		{box
+			;{weight 600}
+			{weight 1000000}
+			;{size 8 6}
+			;1920×1080，个人测试用分辨率
+			;{size 41 25}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
+			;{size 38 20}		;正常显示格数，推荐作为日常使用
+			;1280×720，游戏所支持的最小分辨率
+			;{size 23 16}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
+			{size 20 12}		;正常显示格数加一圈，推荐作为日常使用
+			;{size 19 11}		;正常显示格数，日常使用略小
+
+			{clear}
+
+			;Shell
+			;AP
+			{item "ammo ap bullet28" 100}
+			{item "ammo ap bullet37" 100}
+			{item "ammo ap bullet40" 100}
+			{item "ammo ap bullet45" 100}
+			{item "ammo ap bullet47" 100}
+			{item "ammo ap bullet50" 100}
+			{item "ammo ap bullet57" 100}
+			{item "ammo ap bullet75" 100}
+			{item "ammo ap bullet76" 100}
+			{item "ammo ap bullet77" 100}
+			{item "ammo ap bullet85" 100}
+			{item "ammo ap bullet88" 100}
+			{item "ammo ap bullet89" 100}
+			{item "ammo ap bullet90" 100}
+			{item "ammo ap bullet93" 100}
+			{item "ammo ap bullet95" 100}
+			{item "ammo ap bullet100" 100}
+			{item "ammo ap bullet105" 100}
+			{item "ammo ap bullet120" 100}
+			{item "ammo ap bullet122" 100}
+			{item "ammo ap bullet128" 100}
+			{item "ammo ap bullet150" 100}
+			{item "ammo ap bullet152" 100}
+			;APCR
+			{item "ammo apcr bullet37" 100}
+			{item "ammo apcr bullet40" 100}
+			{item "ammo apcr bullet45" 100}
+			{item "ammo apcr bullet47" 100}
+			{item "ammo apcr bullet50" 100}
+			{item "ammo apcr bullet57" 100}
+			{item "ammo apcr bullet75" 100}
+			{item "ammo apcr bullet76" 100}
+			{item "ammo apcr bullet77" 100}
+			{item "ammo apcr bullet85" 100}
+			{item "ammo apcr bullet88" 100}
+			{item "ammo apcr bullet89" 100}
+			{item "ammo apcr bullet90" 100}
+			{item "ammo apcr bullet93" 100}
+			{item "ammo apcr bullet95" 100}
+			{item "ammo apcr bullet100" 100}
+			{item "ammo apcr bullet105" 100}
+			{item "ammo apcr bullet120" 100}
+			{item "ammo apcr bullet122" 100}
+			{item "ammo apcr bullet128" 100}
+		}
+	}
+	{Volume "body"
+		{thickness 1}
+		{able {touch}}
+	}
+	{extender "stuff"
+		{item "ap+apcr_box"}
+	}
+	{Extension "box2.mdl"}
+}

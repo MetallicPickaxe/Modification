@@ -1,0 +1,6 @@
+{mod
+	{name "Special Supply Collection"}
+	{desc "Producer: Pickaxe"}
+	{minGameVersion "3.260"}
+	{maxGameVersion "3.265"}
+}

@@ -1,0 +1,205 @@
+{game_entity
+	(include "/properties/stuff.ext")
+	{collider "stuff.construction"}
+
+	;{props "-steel" "wood" "fence" "construction" "inventory_box" "spread_items"}
+	{props "steel" "construction" "inventory_box" "spread_items" "no_destroyed_stamp" "cornered" "small"}
+
+	{extender "inventory"
+		{box
+			;{weight 600}
+			{weight 1000000}
+			;{size 8 6}
+			;1920×1080，个人测试用分辨率
+			;{size 41 25}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
+			{size 38 20}		;正常显示格数，推荐作为日常使用
+			;1280×720，游戏所支持的最小分辨率
+			;{size 23 16}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
+			;{size 20 12}		;正常显示格数加一圈，推荐作为日常使用
+			;{size 19 11}		;正常显示格数，日常使用略小
+
+			{clear}
+
+			;Ammunition
+			;Bombing
+			;拖到外面爆炸
+			{item "ammo air_bomb" 100}
+			;拖到外面爆炸
+			{item "ammo air_bomb_il2" 100}
+			;无图标，拖到外面落下航弹引起爆炸
+			{item "ammo artillery_explosion" 100}
+			;无图标，标记后落下航弹引起爆炸
+			{item "ammo artillery_explosion_flaer" 100}
+			;无图标，拖到外面落下航弹引起爆炸
+			{item "ammo outburst_nc" 100}
+			;无图标，拖到外面落下航弹引起爆炸
+			{item "ammo outburst_small_nc" 100}
+			;图标极小，拖到外面爆炸
+			{item "ammo small air_bomb" 100}
+			;无图标，拖到外面落下航弹引起爆炸
+			{item "ammo small artillery_explosion" 100}
+			;可拖到外面稳定放置，可放入人物背包，激发方式未知
+			{item "ammo stuff air_bomb" 100}
+			;无图标，激活方式未知，拖到外面报错
+			;{item "bomb_dropper" 100}
+			;无图标，激活方式未知，拖到外面报错
+			;{item "bomb_dropper_il2" 100}
+
+			;Content
+			;不知道激发方式，拖到外面报错
+			;{item "drug" 100}		;游戏内标注为medic
+			;{item "fire" 100}
+			;{item "fuel" 100}
+			;{item "liquid" 100}		;游戏内标注为fuel
+			;{item "water" 100}
+
+			;Reactive
+			;Normal
+			;无图标，激发方式未知，拖到外面报错
+			;？不确定是Ammonition
+			;{item "arl" 100}
+			;{item "arl_il2" 100}
+			;{item "arl_mustang" 100}
+			;
+			;Ammo
+			{item "ammo 20cm_rocket" 100}
+			{item "ammo 30cm_rocket" 100}
+			{item "ammo arl" 100}
+			{item "ammo bm8" 100}
+			{item "ammo calliope" 100}
+			{item "ammo fg mortar" 100}
+			{item "ammo fg mortar150" 100}
+			{item "ammo goliath" 100}
+			{item "ammo katusha" 100}
+			{item "ammo lm_ammo" 100}
+			{item "ammo nebel41" 100}
+			{item "ammo nebel42" 100}
+			{item "ammo panzerwerfer42" 100}
+			{item "ammo sturmtiger" 100}
+			{item "ammo swg41" 100}
+			{item "ammo torpedo" 100}
+			{item "ammo tulip" 100}
+
+			;Rocket Propelled Grenade|Bazooka
+			;Ammo
+			{item "ammo bazooka" 100}
+			{item "ammo m18recoilless" 100}
+			{item "ammo panzerfaust" 100}
+			{item "ammo panzerfaust60" 100}
+			{item "ammo panzershreck" 100}
+			{item "ammo piatrocket" 100}
+			{item "ammo type_4" 100}
+			{item "ammo uber_bazooka" 100}
+
+			;Shell
+			;Normal
+			{item "ammo bullet203" 100}
+			{item "ammo bullet290" 100}
+			{item "ammo bullet305" 100}
+			{item "ammo bullet600" 100}
+			;Air-Plane
+			{item "ammo airplane bullet20" 100}
+			;AP
+			{item "ammo ap bullet28" 100}
+			{item "ammo ap bullet37" 100}
+			{item "ammo ap bullet40" 100}
+			{item "ammo ap bullet45" 100}
+			{item "ammo ap bullet47" 100}
+			{item "ammo ap bullet50" 100}
+			{item "ammo ap bullet57" 100}
+			{item "ammo ap bullet75" 100}
+			{item "ammo ap bullet76" 100}
+			{item "ammo ap bullet77" 100}
+			{item "ammo ap bullet85" 100}
+			{item "ammo ap bullet88" 100}
+			{item "ammo ap bullet89" 100}
+			{item "ammo ap bullet90" 100}
+			{item "ammo ap bullet93" 100}
+			{item "ammo ap bullet95" 100}
+			{item "ammo ap bullet100" 100}
+			{item "ammo ap bullet105" 100}
+			{item "ammo ap bullet120" 100}
+			{item "ammo ap bullet122" 100}
+			{item "ammo ap bullet128" 100}
+			{item "ammo ap bullet150" 100}
+			{item "ammo ap bullet152" 100}
+			;APCR
+			{item "ammo apcr bullet37" 100}
+			{item "ammo apcr bullet40" 100}
+			{item "ammo apcr bullet45" 100}
+			{item "ammo apcr bullet47" 100}
+			{item "ammo apcr bullet50" 100}
+			{item "ammo apcr bullet57" 100}
+			{item "ammo apcr bullet75" 100}
+			{item "ammo apcr bullet76" 100}
+			{item "ammo apcr bullet77" 100}
+			{item "ammo apcr bullet85" 100}
+			{item "ammo apcr bullet88" 100}
+			{item "ammo apcr bullet89" 100}
+			{item "ammo apcr bullet90" 100}
+			{item "ammo apcr bullet93" 100}
+			{item "ammo apcr bullet95" 100}
+			{item "ammo apcr bullet100" 100}
+			{item "ammo apcr bullet105" 100}
+			{item "ammo apcr bullet120" 100}
+			{item "ammo apcr bullet122" 100}
+			{item "ammo apcr bullet128" 100}
+			;FG
+			{item "ammo fg bullet28" 100}
+			{item "ammo fg bullet37" 100}
+			{item "ammo fg bullet40" 100}
+			{item "ammo fg bullet45" 100}
+			{item "ammo fg bullet47" 100}
+			{item "ammo fg bullet50" 100}
+			{item "ammo fg bullet57" 100}
+			{item "ammo fg bullet75" 100}
+			{item "ammo fg bullet76" 100}
+			{item "ammo fg bullet77" 100}
+			{item "ammo fg bullet85" 100}
+			{item "ammo fg bullet88" 100}
+			{item "ammo fg bullet89" 100}
+			{item "ammo fg bullet90" 100}
+			{item "ammo fg bullet93" 100}
+			{item "ammo fg bullet95" 100}
+			{item "ammo fg bullet100" 100}
+			{item "ammo fg bullet105" 100}
+			{item "ammo fg bullet120" 100}
+			{item "ammo fg bullet122" 100}
+			{item "ammo fg bullet128" 100}
+			{item "ammo fg bullet155" 100}
+			{item "ammo fg bullet152" 100}
+			{item "ammo fg bullet150" 100}
+			;SM
+			{item "ammo sm bullet105" 100}
+			{item "ammo sm bullet122" 100}
+			{item "ammo sm bullet150" 100}
+			{item "ammo sm bullet152" 100}
+			{item "ammo sm bullet155" 100}
+			;Zenite
+			{item "ammo zenite bullet20" 100}
+			{item "ammo zenite bullet25" 100}
+			{item "ammo zenite bullet37" 100}
+			{item "ammo zenite bullet40" 100}
+
+			;Small-Arm|Ammo
+			{item "ammo flaer" 100}
+			{item "ammo flaermow" 100}
+			{item "ammo hmgun" 100}
+			{item "ammo mgun" 100}
+			{item "ammo pistol" 100}
+			{item "ammo ptr" 100}
+			{item "ammo rifle" 100}
+			{item "ammo rifle_grenade_at" 100}
+			{item "ammo rifle_grenade" 100}
+			{item "ammo shotgun" 100}
+		}
+	}
+	{Volume "body"
+		{thickness 1}
+		{able {touch}}
+	}
+	{extender "stuff"
+		{item "consumable_weapon_box"}
+	}
+	{Extension "box2.mdl"}
+}

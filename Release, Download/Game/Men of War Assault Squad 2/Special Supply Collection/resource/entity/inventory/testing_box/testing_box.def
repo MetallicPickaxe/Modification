@@ -1,0 +1,81 @@
+{game_entity
+	(include "/properties/stuff.ext")
+	{collider "stuff.construction"}
+
+	;{props "-steel" "wood" "fence" "construction" "inventory_box" "spread_items"}
+	{props "steel" "construction" "inventory_box" "spread_items" "no_destroyed_stamp" "cornered" "small"}
+
+	{extender "inventory"
+		{box
+			;{weight 600}
+			{weight 1000000}
+			;{size 8 6}
+			;1920×1080，个人测试用分辨率
+			;{size 41 25}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
+			{size 38 20}		;正常显示格数，推荐作为日常使用
+			;1280×720，游戏所支持的最小分辨率
+			;{size 41 25}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
+			;{size 20 12}		;正常显示格数加一圈，推荐作为日常使用
+			;{size 19 11}		;正常显示格数，日常使用略小
+
+			{clear}
+
+			;Testing
+			;Common
+			;不存在
+			;{item "dummy_checker" 1}
+			;无图标，激发方式未知，拖到外面报错
+			;{item "hand thrower" 1}
+
+			;测试对应Mod
+			
+
+			;测试参数
+			
+
+			;测试现代载具
+			;{item "m1a2_abrams" 1}
+			;{item "m1a2_abrams_x" 1}
+			;{item "m1a2_abrams_xx" 1}
+			;{item "m1a2_abrams_tusk" 1}
+			;{item "m1a2_abrams_tusk_x" 1}
+			;{item "m1a2_abrams_tusk_xx" 1}
+			;{item "m26e4" 1}
+
+			;格式
+			;不存在
+			;{item "doublebazooka" 1 filled}		;识别为weapon doublebazooka
+			;{item "ammo mortar" 1}		;识别为ammo fg mortar
+			;{item "ammo mortar150" 1}		;识别为ammo fg mortar150
+			;{item "ammo bullet20" 1}		;识别为ammo airplane bullet20
+
+			;创意
+			;不存在
+			;{item "stuff" 1}		;识别为ammo stuff air_bomb
+			;{item "hand" 1}		;识别为hand thrower
+			;{item "thrower" 1}		;识别为hand thrower
+			;{item "rifle" 1}		;识别为ammo rifle
+			;{item "ptr" 1}		;识别为ammo ptr
+			;{item "grenade" 1}		;识别为grenade skirmish_smoke
+			;{item "mgun" 1}		;识别为ammo mgun
+			;{item "pistol" 1}		;识别为ammo pistol
+			;{item "airplane" 1}		;识别为ammo airplane bullet20
+
+			;FSM
+			;不存在
+			;{item "fsm XXXX" 1}
+
+			;Pattern
+			;不存在
+			;{item "pattern XXXX" 1}
+		}
+	}
+	{Volume "body"
+		{thickness 1}
+		{able {touch}}
+	}
+	{extender "stuff"
+		{item "testing_box"}
+	}
+	{Extension "box2.mdl"}
+}

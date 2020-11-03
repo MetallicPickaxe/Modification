@@ -1,0 +1,181 @@
+{game_entity
+	(include "/properties/stuff.ext")
+	{collider "stuff.construction"}
+
+	;{props "-steel" "wood" "fence" "construction" "inventory_box" "spread_items"}
+	{props "steel" "construction" "inventory_box" "spread_items" "no_destroyed_stamp" "cornered" "small"}
+
+	{extender "inventory"
+		{box
+			;{weight 600}
+			{weight 1000000}
+			;{size 8 6}
+			;1920×1080，个人测试用分辨率
+			;{size 41 25}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
+			{size 38 20}		;正常显示格数，推荐作为日常使用
+			;1280×720，游戏所支持的最小分辨率
+			;{size 23 16}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
+			;{size 20 12}		;正常显示格数加一圈，推荐作为日常使用
+			;{size 19 11}		;正常显示格数，日常使用略小
+
+			{clear}
+
+			;Body
+			{item "body_armor" 100}
+			;不会使用
+			{item "kamikaze_bomb" 100}
+
+			;Capacity
+			{item "barrel" 100 filled}
+			{item "box" 100 filled}
+			{item "can" 100 filled}
+			{item "small_box" 100 filled}
+
+			;Content
+			;不知道激发方式，拖到外面报错
+			;{item "drug" 100}		;游戏内标注为medic
+			;{item "fire" 100}
+			;{item "fuel" 100}
+			;{item "liquid" 100}		;游戏内标注为fuel
+			;{item "water" 100}
+
+			;Head Gear
+			;Beret
+			{item "beret_commando" 100}
+			{item "beret_eng" 100}
+			{item "beret_eng1" 100}
+			{item "beret_eng2" 100}
+			{item "beret_sas" 100}
+			;
+			;Cap
+			;Normal
+			{item "cap_eng" 100}
+			{item "cap_eng_afr" 100}
+			{item "cap_jap_off" 100}
+			{item "cap1_ger" 100}
+			{item "cap1_jap" 100}
+			{item "cap1_rus" 100}
+			{item "cap1_usa" 100}
+			{item "cap2_rus" 100}
+			{item "cap3_rus" 100}
+			;Cook
+			{item "cook_cap" 100}
+			;Field
+			{item "fieldcap_eng" 100}
+			{item "fieldcap_ger" 100}
+			{item "fieldcap_jap" 100}
+			{item "fieldcap_rus" 100}
+			{item "fieldcap1_ger" 100}
+			{item "fieldcap1_jap" 100}
+			{item "fieldcap1_rus" 100}
+			{item "fieldcap2_ger" 100}
+			{item "fieldcap3_ger" 100}
+			;ET Cetera
+			{item "rw_cap" 100}
+			{item "usmc-cap1" 100}
+			;Tank
+			{item "tank_cap1_ger" 100}
+			{item "tank_cap2_ger" 100}
+			;Fur
+			{item "warden_furcap" 100}
+			;
+			;Helmet
+			;Normal
+			{item "helmet_airborne_usa" 100}
+			{item "helmet_jap" 100}
+			{item "helmet_marine_usa" 100}
+			{item "helmet_novice" 100}
+			{item "helmet_paratrooper" 100}
+			{item "helmet_usa_w" 100}
+			{item "helmet1_eng" 100}
+			{item "helmet1_eng_w" 100}
+			{item "helmet1_ger" 100}
+			{item "helmet1_jap" 100}
+			{item "helmet1_jap_w" 100}
+			{item "helmet1_rus" 100}
+			{item "helmet1_rus_w" 100}
+			{item "helmet1_usa" 100}
+			{item "helmet2_eng" 100}
+			{item "helmet2_ger" 100}
+			{item "helmet2_jap" 100}
+			{item "helmet2_rus" 100}
+			{item "helmet2_usa" 100}
+			{item "helmet3_ger" 100}
+			{item "helmet3_jap" 100}
+			{item "helmet4_ger" 100}
+			{item "helmet4_usa" 100}
+			{item "helmet5_ger" 100}
+			{item "helmet6_ger" 100}
+			;Tank
+			{item "tankhelmet_jap" 100}
+			{item "tankhelmet_rus" 100}
+			{item "tankhelmet_usa" 100}
+			;
+			;Hat
+			;Radio
+			{item "radioman_hat" 100}
+			;Winter
+			{item "winterhat" 100}
+			;
+			;ET Cetera
+			{item "extra_headcrab" 100}
+
+			;MEDic
+			{item "bandage" 100}
+			;不知道激发方式
+			{item "medkit" 100 filled}
+			{item "morphine" 100}
+
+			;Special
+			;不知道激发方式
+			{item "b33r" 100}
+			{item "barbwire_kit" 100}
+			{item "binocular" 100}		;？扩展视野，有fog时可见效
+			{item "chicken" 100}		;活物
+			;不知道激发方式，无法点燃
+			{item "cord_wood" 100}
+			;不知道激发方式，无图标
+			;{item "cumulative_charge" 100}
+			;不知道激发方式，无图标
+			;{item "cumulative_launcher" 100}
+			{item "hedgehog_kit" 100}
+			;不知道激发方式，拖动到人物背包报错，放到外面是item，无人物背包
+			;{item "human" 100}
+			;不知道激发方式，无图标
+			;{item "light" 100}
+			{item "matchbox" 100}
+			{item "mine_detector" 100}
+			{item "plant" 100}
+			;不知道激发方式
+			;{item "rad" 100}
+			;不知道激发方式
+			;{item "radio_station" 100}
+			{item "repair_kit" 100}
+			{item "sandbag_kit" 100}
+			;不知道激发方式
+			{item "sandbag_kit2" 100}		;之前版本为sandbag_kit的3倍量版本
+			;不知道激发方式，无图标
+			;{item "searchlight" 100}
+			;不知道激发方式，无图标
+			;{item "secret_doc_bag1" 100}
+			;不知道激发方式，无图标
+			;{item "secret_doc_bag2" 100}
+			;不知道激发方式，无图标
+			;{item "secret_doc_bag3" 100}
+			;不知道激发方式
+			{item "spade_inv" 100}
+			;不知道激发方式
+			{item "steak" 100}
+			;不知道激发方式
+			{item "wirecutters" 100}
+		}
+	}
+	{Volume "body"
+		{thickness 1}
+		{able {touch}}
+	}
+	{extender "stuff"
+		{item "non-weapon_box"}
+	}
+	{Extension "box2.mdl"}
+}
