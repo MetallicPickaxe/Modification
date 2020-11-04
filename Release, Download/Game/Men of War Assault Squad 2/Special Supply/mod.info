@@ -1,5 +1,5 @@
 {mod
-	{name "Special Supply Box"}
+	{name "Special Supply"}
 	{desc "Producer: Pickaxe"}
 	{minGameVersion "3.260"}
 	{maxGameVersion "3.265"}
