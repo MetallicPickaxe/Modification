@@ -49,10 +49,10 @@
 
 			;修改后的内容
 			{item "mine antipersonnel" 100}		;反步兵地雷
-			{item "mine antitank" 100}		;反坦克地雷
+			{item "mine antitank" 100}		;反战车地雷
 			{item "barbwire_kit" 10}		;铁丝网
 			{item "barrel" 10 filled}		;装满的油桶
-			{item "binocular" 100}		;？扩展视野，有fog时可见效
+			{item "binocular" 100}		;？扩展视野，有Fog时可见效
 			{item "can" 10 filled}		;油壶，用于周转燃料
 			{item "hedgehog_kit" 100}		;拒马
 			{item "matchbox" 100}		;纵火烧库的最佳选择
