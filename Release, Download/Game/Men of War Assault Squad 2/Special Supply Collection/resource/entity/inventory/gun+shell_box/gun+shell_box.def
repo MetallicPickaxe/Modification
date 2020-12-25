@@ -1,3 +1,18 @@
+;
+;
+;
+;最后修改日期：2020.11.21
+;综述
+;注：
+;1.三种自动补给装置的原始补给量不同，但是修改后的一致
+;2.使用{item "mortar" "fg" "ammo" 3 {max 30}{value 2}}式的语法，而非{item "ammo fg mortar" 100}式的，且拒绝不良的简化|省略语法
+;3.自3.250起的新版本中，枪弹、炮弹跟随resupply_generic限制进行补给；其他的按照地图定义|breed定义 、resupply_generic较小的一方进行补给，覆盖顺序：地图定义>breed定义>resupply_generic
+;4.默认的补给参照对象是人物，其他参照对象则写出
+;5.保留原文件信息是便于获得对应版本的快照，用于对比分析
+;6.filled、filling不可用
+;
+;原始数据版本：3.262.0
+;
 {game_entity
 	(include "/properties/stuff.ext")
 	{collider "stuff.construction"}
@@ -7,174 +22,24 @@
 
 	{extender "inventory"
 		{box
-			;{weight 600}
-			{weight 1000000}
-			;{size 8 6}
-			;1920×1080，个人测试用分辨率
-			;{size 41 25}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
-			;{size 38 20}		;正常显示格数，推荐作为日常使用
-			;1280×720，游戏所支持的最小分辨率
-			;{size 23 16}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
-			{size 20 12}		;正常显示格数加一圈，推荐作为日常使用
-			;{size 19 11}		;正常显示格数，日常使用略小
+			(include "/properties/special_supply_box_base.inc")
+			("base_attribute")
 
 			{clear}
 
+			;原content。备份用
+
+			;修改后的内容
 			;Gun
-			;无图标，未知激发方式，拖到外面报错
-			;{item "9mm_fmowgun" 1 filled}
-			;{item "20mm_flak38" 1 filled}
-			;{item "20mm_flak38_x4" 1 filled}
-			;{item "20mm_kwk30" 1 filled}
-			;{item "20mm_kwk38(l55)" 1 filled}
-			;{item "20mm_mg151" 1 filled}
-			;{item "20mm_mk10" 1 filled}
-			;{item "20mm_oerlikon" 1 filled}
-			;{item "20mm_oerlikon_x2" 1 filled}
-			;{item "20mm_tns" 1 filled}
-			;{item "20mm_type2" 1 filled}
-			;{item "28mm_spzb41" 1 filled}
-			;{item "37mm_61-k" 1 filled}
-			;{item "37mm_flak36" 1 filled}
-			;{item "37mm_flak43" 1 filled}
-			;{item "37mm_hori" 1 filled}
-			;{item "37mm_m3" 1 filled}
-			;{item "37mm_m5" 1 filled}
-			;{item "37mm_m6" 1 filled}
-			;{item "37mm_pak36" 1 filled}
-			;{item "37mm_type38" 1 filled}
-			;{item "40mm_bofors" 1 filled}
-			;{item "40mm_m19" 1 filled}
-			;{item "40mm_oqf2pdr" 1 filled}
-			;{item "45mm_20k" 1 filled}
-			;{item "47mm_type1" 1 filled}
-			;{item "50mm_kwk38" 1 filled}
-			;{item "50mm_kwk39" 1 filled}
-			;{item "50mm_pak38" 1 filled}
-			;{item "57mm_oqf" 1 filled}
-			;{item "57mm_type1" 1 filled}
-			;{item "57mm_type2" 1 filled}
-			;{item "57mm_type97" 1 filled}
-			;{item "57mm_zis2" 1 filled}
-			;{item "57mm_zis4" 1 filled}
-			;{item "75mm_k51(l24)" 1 filled}
-			;{item "75mm_kwk37" 1 filled}
-			;{item "75mm_kwk40" 1 filled}
-			;{item "75mm_kwk40(l48)" 1 filled}
-			;{item "75mm_kwk42" 1 filled}
-			;{item "75mm_lg40" 1 filled}
-			;{item "75mm_m2" 1 filled}
-			;{item "75mm_m2a" 1 filled}
-			;{item "75mm_m3" 1 filled}
-			;{item "75mm_m6" 1 filled}
-			;{item "75mm_mk5" 1 filled}
-			;{item "75mm_pak39" 1 filled}
-			;{item "75mm_pak40" 1 filled}
-			;{item "75mm_stuk40" 1 filled}
-			;{item "75mm_stuk42" 1 filled}
-			;{item "75mm_type3" 1 filled}
-			;{item "75mm_type5" 1 filled}
-			;{item "75mm_type90" 1 filled}
-			;{item "75mm_type99" 1 filled}
-			;{item "76mm_f34" 1 filled}
-			;{item "76mm_kt26" 1 filled}
-			;{item "76mm_m1a2" 1 filled}
-			;{item "76mm_m5" 1 filled}
-			;{item "76mm_m7" 1 filled}
-			;{item "76mm_mk4" 1 filled}
-			;{item "76mm_zis3" 1 filled}
-			;{item "76mm_zis5" 1 filled}
-			;{item "77mm_hv" 1 filled}
-			;{item "85mm_d5s" 1 filled}
-			;{item "85mm_d5t" 1 filled}
-			;{item "85mm_zis53" 1 filled}
-			;{item "88mm_flak18" 1 filled}
-			;{item "88mm_flak37" 1 filled}
-			;{item "88mm_flak41" 1 filled}
-			;{item "88mm_kwk36" 1 filled}
-			;{item "88mm_kwk36_veteran" 1 filled}
-			;{item "88mm_kwk43" 1 filled}
-			;{item "88mm_oqfmk2" 1 filled}
-			;{item "88mm_pak43" 1 filled}
-			;{item "88mm_type99" 1 filled}
-			;{item "90mm_m3" 1 filled}
-			;{item "90mm_m15" 1 filled}
-			;{item "93mm_vickers" 1 filled}
-			;{item "95mm_oqf" 1 filled}
-			;{item "1mm_d10c" 1 filled}
-			;{item "105mm_l31" 1 filled}
-			;{item "105mm_m2a1" 1 filled}
-			;{item "105mm_m4a3" 1 filled}
-			;{item "105mm_stuh42" 1 filled}
-			;{item "105mm_type6" 1 filled}
-			;{item "105mm_type91" 1 filled}
-			;{item "120mm_l50" 1 filled}
-			;{item "120mm_type97" 1 filled}
-			;{item "122mm_a19s" 1 filled}
-			;{item "122mm_d25" 1 filled}
-			;{item "122mm_m30" 1 filled}
-			;{item "122mm_m30s" 1 filled}
-			;{item "128mm_pak44" 1 filled}
-			;{item "150mm_sfh18" 1 filled}
-			;{item "150mm_sig33" 1 filled}
-			;{item "150mm_sig33_how" 1 filled}
-			;{item "150mm_type38" 1 filled}
-			;{item "150mm_type96" 1 filled}
-			;{item "152mm_bl6" 1 filled}
-			;{item "152mm_d1" 1 filled}
-			;{item "152mm_m10t" 1 filled}
-			;{item "152mm_ml20a" 1 filled}
-			;{item "155mm_gpf" 1 filled}
-			;{item "155mm_m12" 1 filled}
-			;{item "203mm_gun" 1 filled}
-			;{item "290mm_mortar" 1 filled}
-			;{item "305mm_gun" 1 filled}
-			;{item "600mm_gun" 1 filled}
+			;(include "/properties/special_supply_box_base.inc")
+			("collection_gun")
 
 			;Shell
-			;Normal
-			{item "ammo bullet203" 100}
-			{item "ammo bullet290" 100}
-			{item "ammo bullet305" 100}
-			{item "ammo bullet600" 100}
-			;Air-Plane
-			{item "ammo airplane bullet20" 100}
+			;(include "/properties/special_supply_box_base.inc")
+			("collection_shell_etc")
 			;FG
-			{item "ammo fg bullet28" 100}
-			{item "ammo fg bullet37" 100}
-			{item "ammo fg bullet40" 100}
-			{item "ammo fg bullet45" 100}
-			{item "ammo fg bullet47" 100}
-			{item "ammo fg bullet50" 100}
-			{item "ammo fg bullet57" 100}
-			{item "ammo fg bullet75" 100}
-			{item "ammo fg bullet76" 100}
-			{item "ammo fg bullet77" 100}
-			{item "ammo fg bullet85" 100}
-			{item "ammo fg bullet88" 100}
-			{item "ammo fg bullet89" 100}
-			{item "ammo fg bullet90" 100}
-			{item "ammo fg bullet93" 100}
-			{item "ammo fg bullet95" 100}
-			{item "ammo fg bullet100" 100}
-			{item "ammo fg bullet105" 100}
-			{item "ammo fg bullet120" 100}
-			{item "ammo fg bullet122" 100}
-			{item "ammo fg bullet128" 100}
-			{item "ammo fg bullet150" 100}
-			{item "ammo fg bullet152" 100}
-			{item "ammo fg bullet155" 100}
-			;SM
-			{item "ammo sm bullet105" 100}
-			{item "ammo sm bullet122" 100}
-			{item "ammo sm bullet150" 100}
-			{item "ammo sm bullet152" 100}
-			{item "ammo sm bullet155" 100}
-			;Zenite
-			{item "ammo zenite bullet20" 100}
-			{item "ammo zenite bullet25" 100}
-			{item "ammo zenite bullet37" 100}
-			{item "ammo zenite bullet40" 100}
+			;(include "/properties/special_supply_box_base.inc")
+			("collection_shell_fg")
 		}
 	}
 	{Volume "body"

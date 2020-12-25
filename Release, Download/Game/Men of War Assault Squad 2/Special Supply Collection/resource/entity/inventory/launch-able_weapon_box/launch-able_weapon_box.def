@@ -1,3 +1,18 @@
+;
+;
+;
+;最后修改日期：2020.11.21
+;综述
+;注：
+;1.三种自动补给装置的原始补给量不同，但是修改后的一致
+;2.使用{item "mortar" "fg" "ammo" 3 {max 30}{value 2}}式的语法，而非{item "ammo fg mortar" 100}式的，且拒绝不良的简化|省略语法
+;3.自3.250起的新版本中，枪弹、炮弹跟随resupply_generic限制进行补给；其他的按照地图定义|breed定义 、resupply_generic较小的一方进行补给，覆盖顺序：地图定义>breed定义>resupply_generic
+;4.默认的补给参照对象是人物，其他参照对象则写出
+;5.保留原文件信息是便于获得对应版本的快照，用于对比分析
+;6.filled、filling不可用
+;
+;原始数据版本：3.262.0
+;
 {game_entity
 	(include "/properties/stuff.ext")
 	{collider "stuff.construction"}
@@ -7,315 +22,16 @@
 
 	{extender "inventory"
 		{box
-			;{weight 600}
-			{weight 1000000}
-			;{size 8 6}
-			;1920×1080，个人测试用分辨率
-			{size 41 25}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
-			;{size 38 20}		;正常显示格数，推荐作为日常使用
-			;1280×720，游戏所支持的最小分辨率
-			;{size 23 16}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
-			;{size 20 12}		;正常显示格数加一圈，推荐作为日常使用
-			;{size 19 11}		;正常显示格数，日常使用略小
+			(include "/properties/special_supply_box_base.inc")
+			("base_attribute")
 
 			{clear}
 
-			;Anti-Tank Rifle (Противо-Танковое Ружьё，Protivo-Tankovoye Ruzhyo), ATR (ПТР, PTR)
-			{item "boyes" 100 filled}
-			{item "ptrd" 100 filled}
-			{item "ptrs" 100 filled}
-			{item "pzb39" 100 filled}
-			{item "type_97_antitank" 100 filled}
+			;原content。备份用
 
-			;Flare Gun
-			{item "flaergun" 100 filled}		;炮火支援
-			{item "weapon flaermow" 100 filled}		;照明
-
-			;Gun
-			;无图标，未知激发方式，拖到外面报错
-			;{item "9mm_fmowgun" 1 filled}
-			;{item "20mm_flak38" 1 filled}
-			;{item "20mm_flak38_x4" 1 filled}
-			;{item "20mm_kwk30" 1 filled}
-			;{item "20mm_kwk38(l55)" 1 filled}
-			;{item "20mm_mg151" 1 filled}
-			;{item "20mm_mk10" 1 filled}
-			;{item "20mm_oerlikon" 1 filled}
-			;{item "20mm_oerlikon_x2" 1 filled}
-			;{item "20mm_tns" 1 filled}
-			;{item "20mm_type2" 1 filled}
-			;{item "28mm_spzb41" 1 filled}
-			;{item "37mm_61-k" 1 filled}
-			;{item "37mm_flak36" 1 filled}
-			;{item "37mm_flak43" 1 filled}
-			;{item "37mm_hori" 1 filled}
-			;{item "37mm_m3" 1 filled}
-			;{item "37mm_m5" 1 filled}
-			;{item "37mm_m6" 1 filled}
-			;{item "37mm_pak36" 1 filled}
-			;{item "37mm_type38" 1 filled}
-			;{item "40mm_bofors" 1 filled}
-			;{item "40mm_m19" 1 filled}
-			;{item "40mm_oqf2pdr" 1 filled}
-			;{item "45mm_20k" 1 filled}
-			;{item "47mm_type1" 1 filled}
-			;{item "50mm_kwk38" 1 filled}
-			;{item "50mm_kwk39" 1 filled}
-			;{item "50mm_pak38" 1 filled}
-			;{item "57mm_oqf" 1 filled}
-			;{item "57mm_type1" 1 filled}
-			;{item "57mm_type2" 1 filled}
-			;{item "57mm_type97" 1 filled}
-			;{item "57mm_zis2" 1 filled}
-			;{item "57mm_zis4" 1 filled}
-			;{item "75mm_k51(l24)" 1 filled}
-			;{item "75mm_kwk37" 1 filled}
-			;{item "75mm_kwk40" 1 filled}
-			;{item "75mm_kwk40(l48)" 1 filled}
-			;{item "75mm_kwk42" 1 filled}
-			;{item "75mm_lg40" 1 filled}
-			;{item "75mm_m2" 1 filled}
-			;{item "75mm_m2a" 1 filled}
-			;{item "75mm_m3" 1 filled}
-			;{item "75mm_m6" 1 filled}
-			;{item "75mm_mk5" 1 filled}
-			;{item "75mm_pak39" 1 filled}
-			;{item "75mm_pak40" 1 filled}
-			;{item "75mm_stuk40" 1 filled}
-			;{item "75mm_stuk42" 1 filled}
-			;{item "75mm_type3" 1 filled}
-			;{item "75mm_type5" 1 filled}
-			;{item "75mm_type90" 1 filled}
-			;{item "75mm_type99" 1 filled}
-			;{item "76mm_f34" 1 filled}
-			;{item "76mm_kt26" 1 filled}
-			;{item "76mm_m1a2" 1 filled}
-			;{item "76mm_m5" 1 filled}
-			;{item "76mm_m7" 1 filled}
-			;{item "76mm_mk4" 1 filled}
-			;{item "76mm_zis3" 1 filled}
-			;{item "76mm_zis5" 1 filled}
-			;{item "77mm_hv" 1 filled}
-			;{item "85mm_d5s" 1 filled}
-			;{item "85mm_d5t" 1 filled}
-			;{item "85mm_zis53" 1 filled}
-			;{item "88mm_flak18" 1 filled}
-			;{item "88mm_flak37" 1 filled}
-			;{item "88mm_flak41" 1 filled}
-			;{item "88mm_kwk36" 1 filled}
-			;{item "88mm_kwk36_veteran" 1 filled}
-			;{item "88mm_kwk43" 1 filled}
-			;{item "88mm_oqfmk2" 1 filled}
-			;{item "88mm_pak43" 1 filled}
-			;{item "88mm_type99" 1 filled}
-			;{item "90mm_m3" 1 filled}
-			;{item "90mm_m15" 1 filled}
-			;{item "93mm_vickers" 1 filled}
-			;{item "95mm_oqf" 1 filled}
-			;{item "1mm_d10c" 1 filled}
-			;{item "105mm_l31" 1 filled}
-			;{item "105mm_m2a1" 1 filled}
-			;{item "105mm_m4a3" 1 filled}
-			;{item "105mm_stuh42" 1 filled}
-			;{item "105mm_type6" 1 filled}
-			;{item "105mm_type91" 1 filled}
-			;{item "120mm_l50" 1 filled}
-			;{item "120mm_type97" 1 filled}
-			;{item "122mm_a19s" 1 filled}
-			;{item "122mm_d25" 1 filled}
-			;{item "122mm_m30" 1 filled}
-			;{item "122mm_m30s" 1 filled}
-			;{item "128mm_pak44" 1 filled}
-			;{item "150mm_sfh18" 1 filled}
-			;{item "150mm_sig33" 1 filled}
-			;{item "150mm_sig33_how" 1 filled}
-			;{item "150mm_type38" 1 filled}
-			;{item "150mm_type96" 1 filled}
-			;{item "152mm_bl6" 1 filled}
-			;{item "152mm_d1" 1 filled}
-			;{item "152mm_m10t" 1 filled}
-			;{item "152mm_ml20a" 1 filled}
-			;{item "155mm_gpf" 1 filled}
-			;{item "155mm_m12" 1 filled}
-			;{item "203mm_gun" 1 filled}
-			;{item "290mm_mortar" 1 filled}
-			;{item "305mm_gun" 1 filled}
-			;{item "600mm_gun" 1 filled}
-
-			;Heavy Machine
-			{item "browning" 100 filled}
-			{item "browning_x2" 100 filled}
-			{item "browning_x4" 100 filled}
-			{item "dshk" 100 filled}		;ДЕГТЯРЁВА MACHINE GUN
-			{item "uber_browning" 100 filled}
-
-			;Machine GUN
-			;Machine GUN弹药
-			{item "besa" 100 filled}
-			{item "bren" 100 filled}
-			{item "browning_m19" 100 filled}
-			{item "browning_m19a6" 100 filled}
-			;***ДЕГТЯРЁВА MACHINE GUN***
-			{item "dp" 100 filled}
-			{item "ds" 100 filled}
-			{item "dt" 100 filled}
-			;
-			{item "johnson_m1941" 100 filled}
-			{item "lewis_gun" 100 filled}
-			{item "maxim_inv" 100 filled}
-			;4×的Maxim机关枪，无法发射
-			{item "maxim" 100 filled}
-			{item "mg34" 100 filled}
-			{item "mg34_tower" 100 filled}
-			{item "mg34_x2" 100 filled}
-			{item "mg37" 100 filled}
-			{item "mg42" 100 filled}
-			{item "mg42_120" 100 filled}
-			{item "type1hmg" 100 filled}
-			{item "type99lmg" 100 filled}
-			{item "vickers_k" 100 filled}
-			{item "vickers_mgun" 100 filled}
-			;
-			;Assault|Automatic Rifle
-			{item "bar" 100 filled}
-			{item "fg42" 100 filled}
-
-			;Melee
-			{item "axe" 100}
-			{item "crow_bar" 100}		;不知道激发方式
-			{item "knife_ger" 100}
-			{item "knife_japan" 100}
-			{item "knife_rus" 100}
-			{item "knife_union" 100}
-
-			;Pistol
-			{item "colt" 100 filled}
-			{item "luger" 100 filled}
-			{item "nambu" 100 filled}
-			{item "tt" 100 filled}
-			{item "valter" 100 filled}
-			;
-			;Silencer
-			{item "hdm" 100 filled}
-			{item "welrod" 100 filled}		;？
-
-			;Reactive
-			;Normal
-			;？不确定是Weapon
-			;无图标，激发方式未知，拖到外面报错
-			;{item "arl" 100}
-			;{item "arl_il2" 100}
-			;{item "arl_mustang" 100}
-			;
-			;Weapon
-			;无图标，激发方式未知，拖到外面报错
-			;{item "weapon 380mm_rw61" 100 filled}
-			;{item "weapon bm8" 100 filled}
-			;{item "weapon calliope" 100 filled}
-			;{item "weapon mortar150" 100 filled}
-			;{item "weapon goliath" 100 filled}
-			;{item "weapon katusha" 100 filled}
-			;{item "weapon lm" 100 filled}
-			;{item "weapon nebel41" 100 filled}
-			;{item "weapon nebel42" 100 filled}
-			;{item "weapon panzerwerfer42" 100 filled}
-			;{item "weapon swg41" 100 filled}
-			;{item "weapon t4_20cm" 100 filled}
-			;{item "weapon t4_30cm" 100 filled}
-			;{item "weapon torpedo" 100 filled}
-			;{item "weapon tulip" 100 filled}
-			;{item "weapon werfer42" 100 filled}
-			;{item "weapon wurfrahmen40" 100 filled}
-
-			;Revolver
-			;Normal
-			{item "webley" 100 filled}
-			{item "nagan" 100 filled}		;NAGANT REVOLVER
-			;
-			;Silencer
-			{item "nagan_pb" 100 filled}		;消音型Nagant转轮式手枪
-
-			;Rifle
-			{item "g41b" 100 filled}
-			{item "g43" 100 filled}
-			{item "johnson" 100 filled}
-			{item "em3" 100 filled}
-			{item "m1903" 100 filled}
-			{item "mauzer" 100 filled}
-			{item "mosin" 100 filled}		;MOSIN–NAGANT RIFLE
-			{item "sks" 100 filled}
-			{item "svt40" 100 filled}
-			{item "type2rifle" 100 filled}
-			{item "type99rifle" 100 filled}
-			;
-			;Assault|Automatic Rifle
-			;{item "m2_carbine" 100 filled}		;？
-			;
-			;Carbine Rifle
-			{item "garand" 100 filled}
-			{item "m1_carbine" 100 filled}
-			{item "m2_carbine" 100 filled}
-			;
-			;Scope
-			{item "g43_scope" 100 filled}
-			;
-			;Silencer
-			{item "de_lisle" 100 filled}
-
-			;Rifle Grenade
-			{item "em3_mark1" 100 filled}
-			{item "type99rifle_at" 100 filled}
-
-			;Rocket Propelled Grenade|Bazooka
-			;Weapon
-			{item "weapon bazooka" 100 filled}
-			{item "weapon doublebazooka" 100 filled}
-			{item "weapon m18recoilless" 100 filled}
-			{item "weapon panzerfaust" 100 filled}
-			{item "weapon panzerfaust60" 100 filled}
-			{item "weapon panzershreck" 100 filled}
-			{item "weapon piatrocket" 100 filled}
-			{item "weapon type_4at" 100 filled}
-			{item "weapon uber_bazooka" 100 filled}
-
-			;Shot Gun
-			{item "m12_shotgun" 100 filled}
-
-			;Sniper Rifle
-			{item "em2" 100 filled}
-			{item "g41" 100 filled}
-			{item "m1903a4" 100 filled}
-			{item "mosin_s" 100 filled}		;MOSIN–NAGANT RIFLE
-			{item "type99rifle_s" 100 filled}
-
-			;Sub-Machine Gun
-			{item "m3a" 100 filled}
-			{item "m50reising" 100 filled}
-			{item "mp28" 100 filled}
-			{item "mp28_50" 100 filled}
-			{item "mp3008" 100 filled}
-			{item "mp40" 100 filled}
-			{item "mp41" 100 filled}
-			{item "owen_gun" 100 filled}
-			{item "pps43" 100 filled}
-			;***ШПАГИНА SUBMACHINE GUN***
-			{item "ppsh" 100 filled}
-			{item "ppsh41" 100 filled}
-			;
-			{item "sten" 100 filled}
-			{item "sten_v" 100 filled}
-			{item "thompson" 100 filled}
-			{item "thompson_30" 100 filled}
-			{item "thompson_m1928" 100 filled}
-			{item "type100smg" 100 filled}
-			{item "type2smg" 100 filled}
-			;
-			;Silencer
-			{item "sten_v_silencer" 100 filled}
-			;
-			;Assault|Automatic Rifle
-			{item "sg44" 100 filled}
-			{item "sg44b" 100 filled}
+			;修改后的内容
+			;(include "/properties/special_supply_box_base.inc")
+			("collection_weapon_launch-able")
 		}
 	}
 	{Volume "body"

@@ -13,33 +13,25 @@
 ;
 ;原始数据版本：3.262.0
 ;
-{game_entity
-	(include "/properties/stuff.ext")
-	{collider "stuff.construction"}
+;原型：small_box
+{item
+	{tag "itemin2hands keepEntity"}
 
-	;{props "-steel" "wood" "fence" "construction" "inventory_box" "spread_items"}
-	{props "steel" "construction" "inventory_box" "spread_items" "no_destroyed_stamp" "cornered" "small"}
+	;{entity "box2"}
+	{entity "hmgun+ptr_box"}
 
-	{extender "inventory"
-		{box
-			(include "/properties/special_supply_box_base.inc")
-			("base_attribute")
+	;{desc "desc/container/small_box"}
+	{desc "Anti-Tank Rifle (Противо-Танковое Ружьё，Protivo-Tankovoye Ruzhyo) + Heavy Machine Gun Box"}
 
-			{clear}
+	{inventory
+		{size 4 2}
 
-			;原content。备份用
+		;{weight 100}
+		{weight 10000}		;游戏中强制识别为1 0000kg，故保持一致
 
-			;修改后的内容
-			;(include "/properties/special_supply_box_base.inc")
-			("collection_non-weapon")
-		}
+		{fsm "hand-only"}
 	}
-	{Volume "body"
-		{thickness 1}
-		{able {touch}}
-	}
-	{extender "stuff"
-		{item "non-weapon_box"}
-	}
-	{Extension "box2.mdl"}
+
+	;{mass 2}
+	{mass 10000}		;游戏中强制识别为1 0000kg，故保持一致
 }

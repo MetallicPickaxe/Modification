@@ -1,3 +1,18 @@
+;
+;
+;
+;最后修改日期：2020.11.21
+;综述
+;注：
+;1.三种自动补给装置的原始补给量不同，但是修改后的一致
+;2.使用{item "mortar" "fg" "ammo" 3 {max 30}{value 2}}式的语法，而非{item "ammo fg mortar" 100}式的，且拒绝不良的简化|省略语法
+;3.自3.250起的新版本中，枪弹、炮弹跟随resupply_generic限制进行补给；其他的按照地图定义|breed定义 、resupply_generic较小的一方进行补给，覆盖顺序：地图定义>breed定义>resupply_generic
+;4.默认的补给参照对象是人物，其他参照对象则写出
+;5.保留原文件信息是便于获得对应版本的快照，用于对比分析
+;6.filled、filling不可用
+;
+;原始数据版本：3.262.0
+;
 ;原型：small_box
 {item
 	{tag "itemin2hands keepEntity"}
@@ -11,8 +26,9 @@
 	{inventory
 		{size 4 2}
 
-		{weight 100}
-		;{weight 10000}		;游戏中强制识别为1 0000kg，故保持一致
+		;{weight 100}
+		{weight 10000}		;游戏中强制识别为1 0000kg，故保持一致
+
 		{fsm "hand-only"}
 	}
 

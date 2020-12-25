@@ -1,3 +1,18 @@
+;
+;
+;
+;最后修改日期：2020.11.21
+;综述
+;注：
+;1.三种自动补给装置的原始补给量不同，但是修改后的一致
+;2.使用{item "mortar" "fg" "ammo" 3 {max 30}{value 2}}式的语法，而非{item "ammo fg mortar" 100}式的，且拒绝不良的简化|省略语法
+;3.自3.250起的新版本中，枪弹、炮弹跟随resupply_generic限制进行补给；其他的按照地图定义|breed定义 、resupply_generic较小的一方进行补给，覆盖顺序：地图定义>breed定义>resupply_generic
+;4.默认的补给参照对象是人物，其他参照对象则写出
+;5.保留原文件信息是便于获得对应版本的快照，用于对比分析
+;6.filled、filling不可用
+;
+;原始数据版本：3.262.0
+;
 {game_entity
 	(include "/properties/stuff.ext")
 	{collider "stuff.construction"}
@@ -7,88 +22,21 @@
 
 	{extender "inventory"
 		{box
-			;{weight 600}
-			{weight 1000000}
-			;{size 8 6}
-			;1920×1080，个人测试用分辨率
-			;{size 41 25}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
-			;{size 38 20}		;正常显示格数，推荐作为日常使用
-			;1280×720，游戏所支持的最小分辨率
-			;{size 23 16}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
-			{size 20 12}		;正常显示格数加一圈，推荐作为日常使用
-			;{size 19 11}		;正常显示格数，日常使用略小
+			(include "/properties/special_supply_box_base.inc")
+			("base_attribute")
 
 			{clear}
 
+			;原content。备份用
+
+			;修改后的内容
 			;Bombing
-			;拖到外面爆炸
-			{item "ammo air_bomb" 100}
-			;拖到外面爆炸
-			{item "ammo air_bomb_il2" 100}
-			;无图标，拖到外面落下航弹引起爆炸
-			{item "ammo artillery_explosion" 100}
-			;无图标，标记后落下航弹引起爆炸
-			{item "ammo artillery_explosion_flaer" 100}
-			;无图标，拖到外面落下航弹引起爆炸
-			{item "ammo outburst_nc" 100}
-			;无图标，拖到外面落下航弹引起爆炸
-			{item "ammo outburst_small_nc" 100}
-			;图标极小，拖到外面爆炸
-			{item "ammo small air_bomb" 100}
-			;无图标，拖到外面落下航弹引起爆炸
-			{item "ammo small artillery_explosion" 100}
-			;可拖到外面稳定放置，可放入人物背包，激发方式未知
-			{item "ammo stuff air_bomb" 100}
-			;无图标，激活方式未知，拖到外面报错
-			;{item "bomb_dropper" 100}
-			;无图标，激活方式未知，拖到外面报错
-			;{item "bomb_dropper_il2" 100}
+			;(include "/properties/special_supply_box_base.inc")
+			("collection_bombing")
 
 			;Reactive
-			;Normal
-			;无图标，激发方式未知，拖到外面报错
-			;{item "arl" 100}
-			;{item "arl_il2" 100}
-			;{item "arl_mustang" 100}
-			;
-			;Weapon
-			;无图标，激发方式未知，拖到外面报错
-			;{item "weapon 380mm_rw61" 100 filled}
-			;{item "weapon bm8" 100 filled}
-			;{item "weapon calliope" 100 filled}
-			;{item "weapon mortar150" 100 filled}
-			;{item "weapon goliath" 100 filled}
-			;{item "weapon katusha" 100 filled}
-			;{item "weapon lm" 100 filled}
-			;{item "weapon nebel41" 100 filled}
-			;{item "weapon nebel42" 100 filled}
-			;{item "weapon panzerwerfer42" 100 filled}
-			;{item "weapon swg41" 100 filled}
-			;{item "weapon t4_20cm" 100 filled}
-			;{item "weapon t4_30cm" 100 filled}
-			;{item "weapon torpedo" 100 filled}
-			;{item "weapon tulip" 100 filled}
-			;{item "weapon werfer42" 100 filled}
-			;{item "weapon wurfrahmen40" 100 filled}
-			;
-			;Ammo
-			{item "ammo 20cm_rocket" 100}
-			{item "ammo 30cm_rocket" 100}
-			{item "ammo arl" 100}
-			{item "ammo bm8" 100}
-			{item "ammo calliope" 100}
-			{item "ammo fg mortar" 100}
-			{item "ammo fg mortar150" 100}
-			{item "ammo goliath" 100}
-			{item "ammo katusha" 100}
-			{item "ammo lm_ammo" 100}
-			{item "ammo nebel41" 100}
-			{item "ammo nebel42" 100}
-			{item "ammo panzerwerfer42" 100}
-			{item "ammo sturmtiger" 100}
-			{item "ammo swg41" 100}
-			{item "ammo torpedo" 100}
-			{item "ammo tulip" 100}
+			;(include "/properties/special_supply_box_base.inc")
+			("collection_reactive")
 		}
 	}
 	{Volume "body"

@@ -30,8 +30,13 @@
 			;原content。备份用
 
 			;修改后的内容
+			;Anti-Tank Rifle (Противо-Танковое Ружьё，Protivo-Tankovoye Ruzhyo), ATR (ПТР, PTR)
 			;(include "/properties/special_supply_box_base.inc")
-			("collection_non-weapon")
+			("collection_ptr")
+
+			;Heavy Machine
+			;(include "/properties/special_supply_box_base.inc")
+			("collection_hmgun")
 		}
 	}
 	{Volume "body"
@@ -39,7 +44,7 @@
 		{able {touch}}
 	}
 	{extender "stuff"
-		{item "non-weapon_box"}
+		{item "hmgun+ptr_box"}
 	}
 	{Extension "box2.mdl"}
 }

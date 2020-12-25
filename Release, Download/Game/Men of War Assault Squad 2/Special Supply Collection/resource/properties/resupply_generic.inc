@@ -1,8 +1,7 @@
 ;
 ;
 ;
-;
-;最后修改日期：2019.02.15
+;最后修改日期：2020.11.21
 ;综述
 ;注：
 ;1.三种自动补给装置的原始补给量不同，但是修改后的一致
@@ -14,7 +13,7 @@
 ;
 ;原始数据版本：3.262.0
 ;
-;原始内容
+;原content。备份用
 ;(define "para_ammo"
 ;	{extender "supply_zone"
 ;		{resupply
@@ -187,20 +186,20 @@
 ;定义新的变量，减少代码重复
 (define "parachuting_item"
 	;Bombing
-	{item "air_bomb" "ammo" 1 {max 1}}		;？数量未确定
-	{item "air_bomb_il2" "ammo" 1 {max 1}}		;？数量未确定
-	{item "artillery_explosion" "ammo" 1 {max 1}}		;？数量未确定
-	{item "outburst_nc" "ammo" 1 {max 1}}		;？数量未确定
-	{item "outburst_small_nc" "ammo" 1 {max 1}}		;？数量未确定
-	{item "air_bomb" "small" "ammo" 1 {max 1}}		;？数量未确定
-	{item "artillery_explosion" "small" "ammo" 1 {max 1}}		;？数量未确定
-	{item "air_bomb" "stuff" "ammo" 1 {max 1}}		;？数量未确定
+	;{item "air_bomb" "ammo" 1 {max 1}}		;？数量未确定
+	;{item "air_bomb_il2" "ammo" 1 {max 1}}		;？数量未确定
+	;{item "artillery_explosion" "ammo" 1 {max 1}}		;？数量未确定
+	;{item "outburst_nc" "ammo" 1 {max 1}}		;？数量未确定
+	;{item "outburst_small_nc" "ammo" 1 {max 1}}		;？数量未确定
+	;{item "air_bomb" "small" "ammo" 1 {max 1}}		;？数量未确定
+	;{item "artillery_explosion" "small" "ammo" 1 {max 1}}		;？数量未确定
+	;{item "air_bomb" "stuff" "ammo" 1 {max 1}}		;？数量未确定
 
 	;Content
 	;{item "drug" 100 {max 1000}}		;测试自动加？药功能
 	;{item "fire" 100 {max 1000}}		;测试自动加？火功能
 	;{item "fuel" 100 {max 1000}}		;测试自动加油功能
-	;{item "liquid" 100 {max 1000}}		;测试自动加油功能，游戏内标注为Fuel
+	;{item "liquid" 100 {max 1000}}		;测试自动加油功能，游戏内标注为fuel
 	;{item "water" 100 {max 1000}}		;测试自动加水功能
 
 	;Explosive
@@ -244,7 +243,7 @@
 
 	;Medic
 	{item "bandage" 1 {max 5}}		;绷带
-	{item "morphine" 1 {max 1}}		;Morphine
+	;{item "morphine" 1 {max 1}}		;Morphine
 
 	;Reactive
 	{item "20cm_rocket" "ammo" 2 {max 10}{value 5}}
@@ -266,12 +265,12 @@
 	{item "tulip" "ammo" 2 {max 10}{value 5}}
 
 	;Rocket Propelled Grenade
-	{item "bazooka" "ammo" 1 {max 3}}
-	{item "m18recoilless" "ammo" 1 {max 3}}
-	{item "panzershreck" "ammo" 1 {max 3}}
-	{item "piatrocket" "ammo" 1 {max 3}}
-	{item "type_4" "ammo" 1 {max 3}}
-	{item "uber_bazooka" "ammo" 1 {max 3}}		;超级版Bazooka弹药
+	{item "bazooka" "ammo" 1 {max 4}}
+	{item "m18recoilless" "ammo" 1 {max 4}}
+	{item "panzershreck" "ammo" 1 {max 4}}
+	{item "piatrocket" "ammo" 1 {max 4}}
+	{item "type_4" "ammo" 1 {max 4}}
+	{item "uber_bazooka" "ammo" 1 {max 4}}		;超级版Bazooka弹药
 
 	;Shell
 	;Normal
@@ -371,28 +370,28 @@
 
 	;Small-Arm
 	{item "flaer" "ammo" 1 {max 10}}		;火炮引导信号枪弹药
-	{item "flaermow" "ammo" 1 {max 5}}			;照明枪弹药
-	{item "hmgun" "ammo" 100 {max 900}}		;重机枪弹药
-	{item "mgun" "ammo" 100 {max 900}}		;机枪弹药
+	{item "flaermow" "ammo" 1 {max 10}}			;照明枪弹药
+	{item "hmgun" "ammo" 100 {max 600}}		;重机枪弹药
+	{item "mgun" "ammo" 100 {max 600}}		;机枪弹药
 	{item "pistol" "ammo" 100 {max 300}}		;手枪弹药
-	{item "ptr" "ammo" 5 {max 15}}		;反坦克步枪弹药
+	{item "ptr" "ammo" 5 {max 20}}		;反坦克步枪弹药
 	{item "rifle" "ammo" 25 {max 150}}		;步枪弹药
-	{item "rifle_grenade" "ammo" 2 {max 15}}		;枪榴弹弹药
-	{item "rifle_grenade_at" "ammo" 10 {max 60}}		;反坦克枪榴弹弹药
+	{item "rifle_grenade" "ammo" 3 {max 15}}		;枪榴弹弹药
+	{item "rifle_grenade_at" "ammo" 3 {max 15}}		;反坦克枪榴弹弹药
 	{item "shotgun" "ammo" 5 {max 60}}		;霰弹枪弹药
 
 	;Special
 	;{item "b33r" 1 {max 1}}		;Beer
 	{item "barbwire_kit" 1 {max 2}}		;铁丝网，以工程车为参照
-	{item "binocular" 1 {max 1}}		;望远镜
+	;{item "binocular" 1 {max 1}}		;望远镜
 	;{item "chicken" 1 {max 1}}		;鸡
 	;{item "cord_wood" 1 {max 1}}		;木材
 	{item "hedgehog_kit" 1 {max 2}}		;拒马，以工程车为参照
-	{item "matchbox" 1 {max 10}}		;火柴
-	{item "mine_detector" 1 {max 1}}		;扫雷器
-	{item "plant" 1 {max 1}}		;伪装物
+	;{item "matchbox" 1 {max 10}}		;火柴
+	;{item "mine_detector" 1 {max 1}}		;扫雷器
+	;{item "plant" 1 {max 1}}		;伪装物
 	{item "repair_kit" 1 {max 3}}		;修理箱，以多数车为参照
-	{item "sandbag_kit" 1 {max 40}{value 10}}		;沙袋，以工程车为参照
+	;{item "sandbag_kit" 1 {max 40}{value 10}}		;沙袋，以工程车为参照
 	{item "sandbag_kit2" 1 {max 1}}		;大包装沙袋
 	;{item "spade_inv" 1 {max 1}}		;铁锹
 	;{item "steak" 1 {max 1}}		;牛排
@@ -400,7 +399,7 @@
 
 	;测试
 	;Ammunition
-	;{item "smg" "ammo" 100 {max 600}}		;测试冲锋枪弹药分组存在性
+	;{item "smg" "ammo" 100 {max 600}}		;冲锋枪弹药分组，不存在
 	;
 	;Body
 	;{item "body_armor" 1 {max 1}}		;护甲，由于游戏内核修改，3.252版本区分了国籍和兵种，转用补给箱发放

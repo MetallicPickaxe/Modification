@@ -1,3 +1,18 @@
+;
+;
+;
+;最后修改日期：2020.11.21
+;综述
+;注：
+;1.三种自动补给装置的原始补给量不同，但是修改后的一致
+;2.使用{item "mortar" "fg" "ammo" 3 {max 30}{value 2}}式的语法，而非{item "ammo fg mortar" 100}式的，且拒绝不良的简化|省略语法
+;3.自3.250起的新版本中，枪弹、炮弹跟随resupply_generic限制进行补给；其他的按照地图定义|breed定义 、resupply_generic较小的一方进行补给，覆盖顺序：地图定义>breed定义>resupply_generic
+;4.默认的补给参照对象是人物，其他参照对象则写出
+;5.保留原文件信息是便于获得对应版本的快照，用于对比分析
+;6.filled、filling不可用
+;
+;原始数据版本：3.262.0
+;
 {game_entity
 	(include "/properties/car.ext")
 	(include "/properties/selection/vehicle.inc"  scale(1.1))
@@ -92,43 +107,25 @@
 	}
     {extender "inventory"
         {box
-			{size 6 10}
-			;大容量，多大合适取决于屏幕分辨率，一般设置为能看到边框的最大值，需要自行调整
-			;1920×1080，个人测试用分辨率
-			;{size 42 24}		;极限显示格数，推荐仅作为测试用，遮挡右侧命令栏、下侧命令面板，不推荐日常使用
-			;{size 38 20}		;正常显示格数，推荐作为日常使用
-			;1280×720，游戏所支持的最小分辨率
-			{size 20 12}
+			(include "/properties/special_supply_box_base.inc")
+			("size_vehicle")
 
 			{clear}
 
-			;原content
-			;{item "f1" "grenade" 25}
-			;{item "rpg40" "grenade" 10}
-			;{item "smoke" "grenade" 10}
-			;{item "dynamite" 2}
-			;{item "can"}
-			;{item "repair_kit"}
-			;{item "barrel" 2 filling "fuel" 500}
+			;原content。备份用
+			{item "f1" "grenade" 25}
+			{item "rpg40" "grenade" 10}
+			{item "smoke" "grenade" 10}
+			{item "dynamite" 2}
+			{item "can"}
+			{item "repair_kit"}
+			{item "barrel" 2 filling "fuel" 500}
 
 			;{weight 1000000}		;质量，物品可叠加的重量的上限，过小会导致沉的物品不能一起叠加多个
 
 			;stuff目录下的所有item项
-			{item "ap+apcr_box" 1}		;AP+APCR的ammo|shell部分，gun+shell_box在游戏支持的最小分辨率（1280×720）下的补充
-			{item "bazooka+explosive+flame+grenade_box" 1}
-			{item "bombing+reactive_box" 1}		;reactive的weapon部分无图标且激发方式未知，默认只显示ammo部分；bombing的太多项无图标，混放到etc_box中易混淆|出现意外，有2个dropper疑似是对应的weapon，但无图标且激发方式未知，故屏蔽了
-			{item "consumable_weapon_box" 1}		;所有ammunition、content的合集，内容太多，以常见的最大分辨率（1920×1080）对应格数呈现
-			{item "etc_box" 1}		;不足以分箱的item集合
-			{item "favourite_box" 1}		;个人爱好的武器集合，推荐自行设置
-			{item "gun+shell_box" 1}		;weapon部分无图标且激发方式未知，默认只显示除AP、APCR外的ammo|shell部分
-			{item "head_box" 1}
-			{item "hgun+ptr_box" 1}		;mgun_box游戏支持的最小分辨率（1280×720）下装不下，故分箱放置。与ptr_box合箱，一是节约空间，而是都可以有一定的反装甲能力
-			{item "launch-able_weapon_box" 1}		;所有可发射weapon的合集，内容太多，以常见的最大分辨率（1920×1080）的最大支持格数呈现
-			{item "mgun_box" 1}
-			{item "non-weapon_box" 1}		;所有非·Weapon的合集，内容太多，以常见的最大分辨率（1920×1080）对应格数呈现
-			{item "pistol+smg_box" 1}
-			{item "rifle+sniper_box" 1}		;rifle_box+sniper_box
-			;{item "testing_box" 1}		;不定期测试用，内容数量不定，以最大分辨率（1920×1080）对应格数呈现
+			;(include "/properties/special_supply_box_base.inc")
+			("supply_item")
 		}
 	}
 	(include "/properties/resupply_generic.inc")
